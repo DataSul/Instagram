@@ -58,7 +58,6 @@ const LeftNavBar: React.FC<LeftNavBarProps> = ({
 
     onUpload(imageSrc, username);
   };
-
   return (
     <StyledNavContainer>
       <StyledInstaIcon />

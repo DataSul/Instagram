@@ -33,10 +33,18 @@ const HomePage: React.FC<Props> = ({ onClose, onUpload, username }) => {
       }
     );
 
+    const handleUpload = async (imageSrc: string) => {
+      if (fetchedUsername.trim() === "") {
+        console.log("Username is blank. Cannot upload.");
+        return;
+      }
+      onUpload(imageSrc, fetchedUsername);
+    };
+
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [onUpload]);
 
   const handleUpload = async (imageSrc: string) => {
     onUpload(imageSrc, fetchedUsername);

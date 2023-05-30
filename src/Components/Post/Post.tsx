@@ -39,7 +39,7 @@ const Post: React.FC<Props> = ({ onClose, onUpload, fetchedUsername }) => {
   const handleUpload = async () => {
     if (file) {
       try {
-        const storageRef = ref(storage, `uploads/${file.name}`);
+        const storageRef = ref(storage, `images/${file.name}`);
         await uploadBytes(storageRef, file);
         const downloadURL = await getDownloadURL(storageRef);
         const newPost = {
